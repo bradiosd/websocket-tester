@@ -1,0 +1,21 @@
+{
+  "name": "websocket-tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-local": "run-script-os",
+    "start-local:win32": "SET NODE_ENV=local&& nodemon -e js,njk,json -r esm index.js",
+    "start-local:darwin:linux": "export NODE_ENV=local && nodemon -e js,njk,json -r esm index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "run-script-os": "^1.0.7"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "nodemon": "^2.0.2",
+    "stomp-client": "^0.9.0"
+  }
+}

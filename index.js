@@ -1,20 +1,12 @@
-var Stomp = require('stomp-client');
+var http = require('http');
+var fs = require('fs');
 
-var queue = '/exchange/websocket-direct';
-var url = 'ws://localhost';
-var port = '15674';
-
-var client = new Stomp(
-    url, 
-    port, 
-    'admin',
-    'nimda'
-);
-
-client.connect(function(sessionId) {
-    client.subscribe(queue, function(body, headers) {
-      console.log('This is the body of a message on the subscribed queue:', body);
+http
+  .createServer(function(request, response) {
+    fs.readFile('index.html', function(err, data) {
+      response.writeHead(200, { 'Content-Type': 'text/html' });
+      response.write(data);
+      response.end();
     });
-
-    // client.publish(queue, 'Oh herrow');
-});
+  })
+  .listen(8200);

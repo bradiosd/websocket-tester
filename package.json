@@ -14,8 +14,8 @@
     "run-script-os": "^1.0.7"
   },
   "dependencies": {
+    "@stomp/rx-stomp": "^0.3.4",
     "esm": "^3.2.25",
-    "nodemon": "^2.0.2",
-    "stomp-client": "^0.9.0"
+    "nodemon": "^2.0.2"
   }
 }
